@@ -24,11 +24,11 @@ const resolvers = {
             // args = { email, username, password } objects
             const user = await User.create(args);
             // attach jwt to created user
-            const token = signTpoken(user);
+            const token = signToken(user);
             // returns Auth type object { token: ID!, user: User }
             return { token, user };
         },
-        login: async (parent, { email, passowrd }) => {
+        login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
 
             // if no user found through email, throw error
@@ -37,14 +37,14 @@ const resolvers = {
             }
 
             // check to see if password matches encrypted password
-            const correctPw = await user.isCorrectPassword(passowrd);
+            const correctPw = await user.isCorrectPassword(password);
 
             // throw error if incorrect
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            // assign jwt to user upon login
+            // sign jwt to user upon login
             const token = signToken(user);
             //  return auth type { token:ID, user: User } object
             return { token, user };
@@ -70,7 +70,7 @@ const resolvers = {
         },
 
         // destructure args to get id of book to be deleted
-        deleteBook: async (parent, { bookId }, context) => {
+        removeBook: async (parent, { bookId }, context) => {
             // check user login status
             if (context.user) {
                 // find user by id thru context, pull book from savedBooks by bookId passed through args

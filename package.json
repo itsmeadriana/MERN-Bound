@@ -13,6 +13,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
-  }
+    "concurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "apollo-server-express": "^3.5.0",
+    "graphql": "^15.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmeadriana/MERN-Bound.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsmeadriana/MERN-Bound/issues"
+  },
+  "homepage": "https://github.com/itsmeadriana/MERN-Bound#readme"
 }
