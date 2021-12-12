@@ -9,7 +9,7 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost3/googlebooks"
-console.log(MONGODB_URI)
+console.log("heroku config URI: " + process.env.MONGODB_URI)
 const httpLink = createHttpLink({
   uri: MONGODB_URI,
 });
@@ -31,6 +31,7 @@ const client = new ApolloClient({
 })
 
 function App() {
+  console.log("heroku config URI: " + process.env.MONGODB_URI)
   return (
     <ApolloProvider client={client}>
       <Router>
