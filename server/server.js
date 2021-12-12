@@ -34,8 +34,10 @@ startServer();
     app.use(express.static(path.join(__dirname, '../client/build')));
   }
 
-  mongoose.connect(MONGODB_URI, {
+  mongoose.connect(MONGODB_URI || 'mongodb://localhost/googlebooks', {
     useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // useCreateIndex: true,
     useFindAndModify: false,
   });
 
