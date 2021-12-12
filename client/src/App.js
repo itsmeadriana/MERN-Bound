@@ -8,8 +8,10 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
+
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: MONGODB_URI,
 });
 
 const authLink = setContext((_, { headers }) => {
