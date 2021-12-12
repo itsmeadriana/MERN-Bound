@@ -8,8 +8,9 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost3/googlebooks"
-console.log("heroku config URI: " + process.env.MONGODB_URI)
+const MONGODB_URI = "mongodb+srv://itsmeadriana:Rr84182110cc@cluster0.h6avg.mongodb.net/googlebooks?authSource=admin&replicaSet=atlas-or0irh-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true"
+
+console.log("heroku config URI: " + MONGODB_URI)
 const httpLink = createHttpLink({
   uri: MONGODB_URI,
 });
@@ -31,7 +32,8 @@ const client = new ApolloClient({
 })
 
 function App() {
-  console.log("heroku config URI: " + process.env.MONGODB_URI)
+  console.log("heroku config URI: " + MONGODB_URI)
+
   return (
     <ApolloProvider client={client}>
       <Router>
