@@ -8,8 +8,8 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
-
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost3/googlebooks"
+console.log(MONGODB_URI)
 const httpLink = createHttpLink({
   uri: MONGODB_URI,
 });
