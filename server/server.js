@@ -28,7 +28,6 @@ async function startServer() {
 }
 
 startServer();
-
   // Serve up static assets
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
