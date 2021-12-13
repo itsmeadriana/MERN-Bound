@@ -26,7 +26,7 @@ This web app uses Google Books as a search engine to allow users to search, save
 
 ## Preview:
 
-https://user-images.githubusercontent.com/84536824/145735722-0e0fed45-a86b-4bd9-936e-a1f367baca43.mov
+https://user-images.githubusercontent.com/84536824/145736228-206a10a8-9882-4e93-b79e-749253e6441f.mov
 
 ## Website
 
